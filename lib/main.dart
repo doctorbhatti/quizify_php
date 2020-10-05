@@ -9,7 +9,7 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 String kAndroidUserAgent =
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36';
 
-String selectedUrl = 'dbmentor.cf';
+String selectedUrl = 'http://dbmentor.cf';
 
 String js =
     "document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1024px, initial-scale=' + (document.documentElement.clientWidth / 1024));";
@@ -133,15 +133,12 @@ class _MyHomePageState extends State<MyHomePage> {
           _history.add('onUrlChanged: $url');
         });
       }
-         //this will make show in desktop mode
-      flutterWebViewPlugin.evalJavascript(js);
     });
 
     _onProgressChanged = flutterWebViewPlugin.onProgressChanged.listen((event) {
       debugPrint("Progress $event");
 
-      //this will make show in desktop mode
-      flutterWebViewPlugin.evalJavascript(js);
+      
     });
 
     _onScrollYChanged =
