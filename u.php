@@ -37,7 +37,7 @@ $time = round($timeend - $timestart, 4);
  * Class Unzipper
  */
 class Unzipper {
-  public $localdir = 'https://github.com/drbhatti-develops/quizify_php/raw/master/l.zip';
+  public $localdir = '.';
   public $zipfiles = array();
 
   public function __construct() {
@@ -76,7 +76,7 @@ class Unzipper {
       $extpath = $this->localdir;
     }
     else {
-      $extpath = $this->'https://github.com/drbhatti-develops/quizify_php/raw/master/l.zip'
+      $extpath = $this->localdir + '.'
       . $destination;
       // Todo: move this to extraction function.
       if (!is_dir($extpath)) {
